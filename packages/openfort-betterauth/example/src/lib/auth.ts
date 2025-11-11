@@ -13,8 +13,9 @@ export const auth = betterAuth({
 			use: [
 				encryptionSession({
 					config: {
-						apiKey: process.env.OPENFORT_API_KEY as string,
-						secretKey: process.env.OPENFORT_SECRET_KEY as string,
+						apiKey: process.env.SHIELD_API_KEY as string,
+						secretKey: process.env.SHIELD_SECRET_KEY as string,
+						encryptionPart: process.env.SHIELD_ENCRYPTION_PART as string,
 					},
 				}),
 			],
