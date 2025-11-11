@@ -2,12 +2,14 @@ import { betterAuth } from "better-auth";
 import { openfort, encryptionSession } from "@openfort/better-auth";
 import Database from "better-sqlite3";
 import { openfortSDK } from "./openfort";
+import { bearer } from "better-auth/plugins";
 
 export const auth = betterAuth({
 	emailAndPassword: {
 		enabled: true,
 	},
 	plugins: [
+		bearer(),
 		openfort({
 			client: openfortSDK,
 			use: [
