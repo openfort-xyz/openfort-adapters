@@ -11,13 +11,17 @@ export type OpenfortEndpoints = UnionToIntersection<ReturnType<OpenfortPlugin>>;
 
 export interface EncryptionSessionConfig {
 	/**
-	 * Openfort API Key
+	 * Shield API Key
 	 */
 	apiKey: string;
 	/**
-	 * Openfort Secret Key
+	 * Shield Secret Key
 	 */
 	secretKey: string;
+	/**
+	 * Encryption part for Shield encryption session
+	 */
+	encryptionPart: string;
 	/**
 	 * Optional Shield API Base URL (defaults to https://shield.openfort.io)
 	 */

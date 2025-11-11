@@ -16,14 +16,19 @@ pnpm add better-auth @openfort/better-auth @openfort/openfort-node
 
 ## Setup
 
-### 1. Get Your Openfort API Keys
+### 1. Get Your Openfort Credentials
 
-Go to your [Openfort Dashboard](https://dashboard.openfort.xyz) and create an API key and secret key.
+Go to your [Openfort Dashboard](https://dashboard.openfort.io) and get:
+- Your Openfort API key for the SDK client
+- Your Shield API key and Shield secret key for encryption session management
+- Your encryption part (from your Shield configuration)
 
 ```bash
 # .env
 OPENFORT_API_KEY=sk_test_...
-OPENFORT_SECRET_KEY=...
+SHIELD_API_KEY=...
+SHIELD_SECRET_KEY=...
+SHIELD_ENCRYPTION_PART=...
 ```
 
 ### 2. Configure BetterAuth Server
@@ -43,8 +48,9 @@ const auth = betterAuth({
       use: [
         encryptionSession({
           config: {
-            apiKey: process.env.OPENFORT_API_KEY!,
-            secretKey: process.env.OPENFORT_SECRET_KEY!,
+            apiKey: process.env.SHIELD_API_KEY!,
+            secretKey: process.env.SHIELD_SECRET_KEY!,
+            encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
           },
         }),
       ],
@@ -77,8 +83,9 @@ The `encryptionSession` plugin is included in the `use` array and requires the e
 ```typescript
 encryptionSession({
   config: {
-    apiKey: process.env.OPENFORT_API_KEY!,
-    secretKey: process.env.OPENFORT_SECRET_KEY!,
+    apiKey: process.env.SHIELD_API_KEY!,
+    secretKey: process.env.SHIELD_SECRET_KEY!,
+    encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
     shieldAPIBaseURL: "https://shield.openfort.io", // Optional
   },
 })
@@ -91,9 +98,7 @@ import { authClient } from "./auth-client";
 
 // Create an encryption session
 try {
-  const { sessionId, success } = await authClient.createEncryptionSession(
-    "encryption_part_data"
-  );
+  const { sessionId, success } = await authClient.createEncryptionSession();
 
   console.log("Encryption session created:", sessionId);
 } catch (error) {
@@ -120,8 +125,9 @@ interface OpenfortOptions {
 ```typescript
 interface EncryptionSessionOptions {
   config?: {
-    apiKey: string;
-    secretKey: string;
+    apiKey: string; // Shield API Key
+    secretKey: string; // Shield Secret Key
+    encryptionPart: string; // Encryption part from Shield configuration
     shieldAPIBaseURL?: string; // Default: 'https://shield.openfort.io'
   };
 }
@@ -145,12 +151,12 @@ Creates an encryption session endpoint at `/encryption-session`.
 
 Creates the client-side plugin for Better Auth.
 
-#### `authClient.createEncryptionSession(encryptionPart)`
+#### `authClient.createEncryptionSession()`
 
-Creates an encryption session for the authenticated user.
+Creates an encryption session for the authenticated user using the encryption part configured on the server.
 
 **Parameters:**
-- `encryptionPart` (string): The encryption data to register
+- `fetchOptions` (optional): BetterAuth fetch options
 
 **Returns:**
 ```typescript
@@ -182,8 +188,9 @@ export const auth = betterAuth({
       use: [
         encryptionSession({
           config: {
-            apiKey: process.env.OPENFORT_API_KEY!,
-            secretKey: process.env.OPENFORT_SECRET_KEY!,
+            apiKey: process.env.SHIELD_API_KEY!,
+            secretKey: process.env.SHIELD_SECRET_KEY!,
+            encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
           },
         }),
       ],
@@ -211,9 +218,7 @@ import { authClient } from "./auth";
 
 async function setupWallet() {
   try {
-    const encryptionPart = generateEncryptionPart(); // Your logic here
-
-    const result = await authClient.createEncryptionSession(encryptionPart);
+    const result = await authClient.createEncryptionSession();
 
     if (result.success) {
       console.log("Wallet setup complete. Session ID:", result.sessionId);

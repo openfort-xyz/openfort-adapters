@@ -1,7 +1,6 @@
 import type Openfort from "@openfort/openfort-node";
 import { APIError, getSessionFromCtx } from "better-auth/api";
 import { createAuthEndpoint } from "better-auth/plugins";
-import { z } from "zod";
 import type { EncryptionSessionConfig } from "../types";
 
 export interface EncryptionSessionOptions {
@@ -11,12 +10,6 @@ export interface EncryptionSessionOptions {
 	config?: EncryptionSessionConfig;
 }
 
-export const EncryptionSessionParams = z.object({
-	encryptionPart: z.string(),
-});
-
-export type EncryptionSessionParams = z.infer<typeof EncryptionSessionParams>;
-
 export const encryptionSession =
 	(encryptionSessionOptions: EncryptionSessionOptions = {}) =>
 	(openfort: Openfort) => {
@@ -25,7 +18,6 @@ export const encryptionSession =
 				"/encryption-session",
 				{
 					method: "POST",
-					body: EncryptionSessionParams,
 				},
 				async (ctx) => {
 					const session = await getSessionFromCtx(ctx);
@@ -39,18 +31,18 @@ export const encryptionSession =
 					if (!encryptionSessionOptions.config) {
 						throw new APIError("BAD_REQUEST", {
 							message:
-								"Encryption session configuration is required. Please provide apiKey and secretKey in the plugin options.",
+								"Encryption session configuration is required. Please provide Shield API Key, Shield Secret Key, and encryption part in the plugin options.",
 						});
 					}
 
-					const { apiKey, secretKey, shieldAPIBaseURL } =
+					const { apiKey, secretKey, encryptionPart, shieldAPIBaseURL } =
 						encryptionSessionOptions.config;
 
 					try {
 						const sessionId = await openfort.registerRecoverySession(
 							apiKey,
 							secretKey,
-							ctx.body.encryptionPart,
+							encryptionPart,
 							shieldAPIBaseURL,
 						);
 
