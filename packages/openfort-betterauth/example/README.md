@@ -27,11 +27,13 @@ cp .env.example .env.local
 Required environment variables:
 
 ```env
-OPENFORT_SECRET_KEY=sk_test_your_secret_key_here
-OPENFORT_API_KEY=pk_test_your_api_key_here
+OPENFORT_API_KEY=sk_test_your_openfort_api_key_here
+SHIELD_API_KEY=your_shield_api_key_here
+SHIELD_SECRET_KEY=your_shield_secret_key_here
+SHIELD_ENCRYPTION_PART=your_encryption_part_here
 ```
 
-Get your API keys from the [Openfort Dashboard](https://dashboard.openfort.xyz).
+Get your credentials from the [Openfort Dashboard](https://dashboard.openfort.io).
 
 ### 3. Run the Development Server
 
@@ -59,8 +61,9 @@ export const auth = betterAuth({
       use: [
         encryptionSession({
           config: {
-            apiKey: process.env.OPENFORT_API_KEY!,
-            secretKey: process.env.OPENFORT_SECRET_KEY!,
+            apiKey: process.env.SHIELD_API_KEY!,
+            secretKey: process.env.SHIELD_SECRET_KEY!,
+            encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
           },
         }),
       ],
@@ -89,12 +92,14 @@ export const authClient = createAuthClient({
 Once authenticated, you can create encryption sessions:
 
 ```typescript
-const result = await authClient.createEncryptionSession(encryptionPart);
+const result = await authClient.createEncryptionSession();
 
 if (result.success) {
   console.log("Session ID:", result.sessionId);
 }
 ```
+
+The encryption part is configured on the server side, so the client doesn't need to provide it.
 
 ## Project Structure
 
