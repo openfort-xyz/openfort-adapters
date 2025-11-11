@@ -15,19 +15,14 @@ export const openfortClient = () => {
 			return {
 				/**
 				 * Create an encryption session for the authenticated user
-				 * @param encryptionPart - The encryption part to register
 				 * @param fetchOptions - Optional fetch options
 				 * @returns The session ID and success status
 				 */
 				createEncryptionSession: async (
-					encryptionPart: string,
 					fetchOptions?: BetterFetchOption,
 				): Promise<EncryptionSessionResponse> => {
 					const res = await $fetch("/encryption-session", {
 						method: "POST",
-						body: {
-							encryptionPart,
-						},
 						...fetchOptions,
 					});
 
