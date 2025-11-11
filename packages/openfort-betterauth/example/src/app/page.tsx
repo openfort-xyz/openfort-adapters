@@ -17,10 +17,7 @@ export default function Home() {
 			setLoading(true);
 			setError(null);
 
-			// Example encryption part - in a real app, this would come from your wallet setup
-			const encryptionPart = "example_encryption_part_" + Date.now();
-
-			const result = await authClient.createEncryptionSession(encryptionPart);
+			const result = await authClient.createEncryptionSession();
 
 			if (result.success) {
 				setSessionId(result.sessionId);
