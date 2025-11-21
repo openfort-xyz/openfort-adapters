@@ -9,13 +9,19 @@
 		"format": "turbo format",
 		"ci": "turbo build && turbo check && turbo test",
 		"test": "turbo test -- run",
-		"publish-packages": "turbo run lint check build && changeset publish"
+		"publish-packages": "turbo run lint check build && changeset publish",
+		"changeset": "changeset",
+		"changeset:version": "pnpm install --lockfile-only && changeset version",
+		"changeset:publish": "pnpm build && changeset publish"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"prettier": "^3.6.2",
 		"turbo": "^2.5.8",
 		"typescript": "5.9.3"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
 	},
 	"packageManager": "pnpm@10.19.0",
 	"engines": {
