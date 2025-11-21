@@ -2,6 +2,11 @@
 	"name": "@openfort/adapter-utils",
 	"version": "0.0.1",
 	"description": "Core package for Openfort adapters",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/openfort-xyz/openfort-adapters.git",
+		"directory": "packages/adapter-utils"
+	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
