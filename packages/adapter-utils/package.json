@@ -1,6 +1,6 @@
 {
 	"name": "@openfort/adapter-utils",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Core package for Openfort adapters",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
