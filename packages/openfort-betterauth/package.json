@@ -2,6 +2,11 @@
 	"name": "@openfort/better-auth",
 	"version": "0.0.2",
 	"description": "Openfort wallet integration for better-auth with encryption session support",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/openfort-xyz/openfort-adapters.git",
+		"directory": "packages/openfort-betterauth"
+	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
