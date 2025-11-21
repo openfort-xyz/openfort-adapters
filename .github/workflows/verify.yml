@@ -31,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # - name: Security audit
-      #   run: pnpm audit
+      - name: Security audit
+        run: pnpm audit
 
       - name: turbo lint
         run: pnpm lint
@@ -43,8 +43,8 @@ jobs:
       - name: turbo test
         run: pnpm test
 
-      # - name: Code check (Biome)
-      #   run: pnpm biome check
+      - name: Code check (Biome)
+        run: pnpm biome check
 
       - name: Build project
         run: pnpm build
