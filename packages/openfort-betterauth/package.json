@@ -1,6 +1,6 @@
 {
 	"name": "@openfort/better-auth",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Openfort wallet integration for better-auth with encryption session support",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
