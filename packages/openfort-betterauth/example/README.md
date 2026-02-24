@@ -27,10 +27,10 @@ cp .env.example .env.local
 Required environment variables:
 
 ```env
-OPENFORT_API_KEY=sk_test_your_openfort_api_key_here
-SHIELD_API_KEY=your_shield_api_key_here
+OPENFORT_SECRET_KEY=sk_test_your_openfort_api_key_here
+SHIELD_PUBLISHABLE_KEY=your_shield_api_key_here
 SHIELD_SECRET_KEY=your_shield_secret_key_here
-SHIELD_ENCRYPTION_PART=your_encryption_part_here
+SHIELD_ENCRYPTION_SHARE=your_encryption_part_here
 ```
 
 Get your credentials from the [Openfort Dashboard](https://dashboard.openfort.io).
@@ -61,9 +61,9 @@ export const auth = betterAuth({
       use: [
         encryptionSession({
           config: {
-            apiKey: process.env.SHIELD_API_KEY!,
+            apiKey: process.env.SHIELD_PUBLISHABLE_KEY!,
             secretKey: process.env.SHIELD_SECRET_KEY!,
-            encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
+            encryptionPart: process.env.SHIELD_ENCRYPTION_SHARE!,
           },
         }),
       ],
