@@ -24,7 +24,9 @@ export default function Home() {
 				console.log("Encryption session created:", result.sessionId);
 			}
 		} catch (e) {
-			setError(e instanceof Error ? e.message : "Failed to create encryption session");
+			setError(
+				e instanceof Error ? e.message : "Failed to create encryption session",
+			);
 			console.error("Encryption session error:", e);
 		} finally {
 			setLoading(false);
@@ -45,7 +47,8 @@ export default function Home() {
 				<div className="flex flex-col gap-4 items-center justify-center p-6 border rounded-lg">
 					<h2 className="text-xl font-semibold">Encryption Session</h2>
 					<p className="text-sm text-gray-600 text-center max-w-md">
-						Create a secure encryption session for wallet recovery using Openfort Shield API
+						Create a secure encryption session for wallet recovery using
+						Openfort Shield API
 					</p>
 
 					<button
@@ -59,7 +62,9 @@ export default function Home() {
 
 					{sessionId && (
 						<div className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
-							<p className="text-sm font-semibold text-green-800">Session Created!</p>
+							<p className="text-sm font-semibold text-green-800">
+								Session Created!
+							</p>
 							<p className="text-xs text-green-600 mt-1 font-mono break-all">
 								ID: {sessionId}
 							</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession, signOut } from "@/lib/auth-client";
+import { signOut, useSession } from "@/lib/auth-client";
 
 export const Me = () => {
 	const { data: session } = useSession();
@@ -9,7 +9,9 @@ export const Me = () => {
 		return (
 			<div className="flex flex-col gap-4 p-6 border rounded-lg">
 				<h2 className="text-lg font-semibold">Not Authenticated</h2>
-				<p className="text-sm text-gray-600">Please sign in or register to continue</p>
+				<p className="text-sm text-gray-600">
+					Please sign in or register to continue
+				</p>
 			</div>
 		);
 	}

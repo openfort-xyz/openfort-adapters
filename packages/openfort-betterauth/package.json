@@ -32,16 +32,8 @@
 		"dev": "npm run build -- --watch",
 		"check": "biome check --write ./src"
 	},
-	"files": [
-		"dist"
-	],
-	"keywords": [
-		"openfort",
-		"better-auth",
-		"wallet",
-		"web3",
-		"authentication"
-	],
+	"files": ["dist"],
+	"keywords": ["openfort", "better-auth", "wallet", "web3", "authentication"],
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@openfort/adapter-utils": "workspace:*",

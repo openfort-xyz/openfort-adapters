@@ -1,8 +1,8 @@
+import { encryptionSession, openfort } from "@openfort/better-auth";
 import { betterAuth } from "better-auth";
-import { openfort, encryptionSession } from "@openfort/better-auth";
+import { bearer } from "better-auth/plugins";
 import Database from "better-sqlite3";
 import { openfortSDK } from "./openfort";
-import { bearer } from "better-auth/plugins";
 
 export const auth = betterAuth({
 	emailAndPassword: {
