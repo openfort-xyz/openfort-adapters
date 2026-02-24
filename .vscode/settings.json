@@ -7,5 +7,5 @@
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"deno.enable": true,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": false
+	"typescript.tsserver.experimental.enableProjectDiagnostics": false
 }

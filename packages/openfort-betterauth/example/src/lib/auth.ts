@@ -1,8 +1,8 @@
+import { encryptionSession, openfort } from "@openfort/better-auth";
 import { betterAuth } from "better-auth";
-import { openfort, encryptionSession } from "@openfort/better-auth";
+import { bearer } from "better-auth/plugins";
 import Database from "better-sqlite3";
 import { openfortSDK } from "./openfort";
-import { bearer } from "better-auth/plugins";
 
 export const auth = betterAuth({
 	emailAndPassword: {
@@ -15,9 +15,9 @@ export const auth = betterAuth({
 			use: [
 				encryptionSession({
 					config: {
-						apiKey: process.env.SHIELD_API_KEY as string,
+						apiKey: process.env.SHIELD_PUBLISHABLE_KEY as string,
 						secretKey: process.env.SHIELD_SECRET_KEY as string,
-						encryptionPart: process.env.SHIELD_ENCRYPTION_PART as string,
+						encryptionPart: process.env.SHIELD_ENCRYPTION_SHARE as string,
 					},
 				}),
 			],

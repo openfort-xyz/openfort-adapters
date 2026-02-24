@@ -39,7 +39,7 @@ export const encryptionSession =
 						encryptionSessionOptions.config;
 
 					try {
-						const sessionId = await openfort.registerRecoverySession(
+						const sessionId = await openfort.createEncryptionSession(
 							apiKey,
 							secretKey,
 							encryptionPart,

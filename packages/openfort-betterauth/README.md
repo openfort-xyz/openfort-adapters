@@ -25,10 +25,10 @@ Go to your [Openfort Dashboard](https://dashboard.openfort.io) and get:
 
 ```bash
 # .env
-OPENFORT_API_KEY=sk_test_...
-SHIELD_API_KEY=...
+OPENFORT_SECRET_KEY=sk_test_...
+SHIELD_PUBLISHABLE_KEY=...
 SHIELD_SECRET_KEY=...
-SHIELD_ENCRYPTION_PART=...
+SHIELD_ENCRYPTION_SHARE=...
 ```
 
 ### 2. Configure BetterAuth Server
@@ -48,9 +48,9 @@ const auth = betterAuth({
       use: [
         encryptionSession({
           config: {
-            apiKey: process.env.SHIELD_API_KEY!,
+            apiKey: process.env.SHIELD_PUBLISHABLE_KEY!,
             secretKey: process.env.SHIELD_SECRET_KEY!,
-            encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
+            encryptionPart: process.env.SHIELD_ENCRYPTION_SHARE!,
           },
         }),
       ],
@@ -83,9 +83,9 @@ The `encryptionSession` plugin is included in the `use` array and requires the e
 ```typescript
 encryptionSession({
   config: {
-    apiKey: process.env.SHIELD_API_KEY!,
+    apiKey: process.env.SHIELD_PUBLISHABLE_KEY!,
     secretKey: process.env.SHIELD_SECRET_KEY!,
-    encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
+    encryptionPart: process.env.SHIELD_ENCRYPTION_SHARE!,
     shieldAPIBaseURL: "https://shield.openfort.io", // Optional
   },
 })
@@ -176,7 +176,7 @@ import { betterAuth } from "better-auth";
 import { openfort, encryptionSession } from "@openfort/better-auth";
 import Openfort from "@openfort/openfort-node";
 
-const openfortClient = new Openfort(process.env.OPENFORT_API_KEY!);
+const openfortClient = new Openfort(process.env.OPENFORT_SECRET_KEY!);
 
 export const auth = betterAuth({
   database: {
@@ -188,9 +188,9 @@ export const auth = betterAuth({
       use: [
         encryptionSession({
           config: {
-            apiKey: process.env.SHIELD_API_KEY!,
+            apiKey: process.env.SHIELD_PUBLISHABLE_KEY!,
             secretKey: process.env.SHIELD_SECRET_KEY!,
-            encryptionPart: process.env.SHIELD_ENCRYPTION_PART!,
+            encryptionPart: process.env.SHIELD_ENCRYPTION_SHARE!,
           },
         }),
       ],
