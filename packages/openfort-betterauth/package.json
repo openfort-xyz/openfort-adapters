@@ -40,7 +40,7 @@
 		"@openfort/openfort-node": "^0.8.2",
 		"@sindresorhus/tsconfig": "^7.0.0",
 		"@types/node": "^20.0.0",
-		"better-auth": "^1.4.5",
+		"better-auth": "^1.5.6",
 		"tsup": "^8.5.0",
 		"vitest": "^2.1.8"
 	},
