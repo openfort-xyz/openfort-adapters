@@ -42,7 +42,7 @@
 		"@types/node": "^20.0.0",
 		"better-auth": "^1.4.9",
 		"tsup": "^8.5.0",
-		"vitest": "^2.1.8"
+		"vitest": "^3.2.4"
 	},
 	"peerDependencies": {
 		"@openfort/openfort-node": "^0.10.3",
