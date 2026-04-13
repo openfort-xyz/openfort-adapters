@@ -1,5 +1,11 @@
 # @openfort/better-auth
 
+## 0.0.4
+
+### Patch Changes
+
+- [#16](https://github.com/openfort-xyz/openfort-adapters/pull/16) [`b4d17ce`](https://github.com/openfort-xyz/openfort-adapters/commit/b4d17ce1ba3fb0af8cbfcf1fdd4ec94086e5ff1b) Thanks [@jamalavedra](https://github.com/jamalavedra)! - update deps
+
 ## 0.0.3
 
 ### Patch Changes
