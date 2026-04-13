@@ -1,6 +1,6 @@
 {
 	"name": "@openfort/better-auth",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Openfort wallet integration for better-auth with encryption session support",
 	"repository": {
 		"type": "git",
@@ -32,8 +32,16 @@
 		"dev": "npm run build -- --watch",
 		"check": "biome check --write ./src"
 	},
-	"files": ["dist"],
-	"keywords": ["openfort", "better-auth", "wallet", "web3", "authentication"],
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"openfort",
+		"better-auth",
+		"wallet",
+		"web3",
+		"authentication"
+	],
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@openfort/adapter-utils": "workspace:*",
