@@ -29,12 +29,12 @@
 	"author": "",
 	"license": "Apache-2.0",
 	"dependencies": {
-		"@openfort/openfort-node": "^0.8.2"
+		"@openfort/openfort-node": "^0.10.3"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^7.0.0",
 		"tsup": "^8.5.0",
 		"typescript": "^5.9.3",
-		"vitest": "^2.1.8"
+		"vitest": "^3.2.4"
 	}
 }
