@@ -1,10 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Login } from "@/components/Login";
 import { Me } from "@/components/Me";
 import { Register } from "@/components/Register";
 import { authClient, useSession } from "@/lib/auth-client";
-import { useState } from "react";
 
 export default function Home() {
 	const { data: session } = useSession();

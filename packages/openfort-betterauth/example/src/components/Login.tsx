@@ -1,7 +1,7 @@
 "use client";
 
-import { signIn } from "@/lib/auth-client";
 import { useState } from "react";
+import { signIn } from "@/lib/auth-client";
 
 export const Login = () => {
 	const [email, setEmail] = useState("");
