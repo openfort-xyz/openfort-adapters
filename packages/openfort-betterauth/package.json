@@ -1,6 +1,6 @@
 {
 	"name": "@openfort/better-auth",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Openfort wallet integration for better-auth with encryption session support",
 	"repository": {
 		"type": "git",

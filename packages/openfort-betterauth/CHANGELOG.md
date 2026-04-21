@@ -1,5 +1,11 @@
 # @openfort/better-auth
 
+## 0.0.5
+
+### Patch Changes
+
+- [#19](https://github.com/openfort-xyz/openfort-adapters/pull/19) [`ef6403b`](https://github.com/openfort-xyz/openfort-adapters/commit/ef6403bb3e87a1f4cc35b5bee51576b4b595be4a) Thanks [@jamalavedra](https://github.com/jamalavedra)! - update createAuthEndpoint
+
 ## 0.0.4
 
 ### Patch Changes
