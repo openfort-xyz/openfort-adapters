@@ -32,8 +32,8 @@
 		"@openfort/openfort-node": "^0.10.3"
 	},
 	"devDependencies": {
-		"@sindresorhus/tsconfig": "^7.0.0",
-		"tsup": "^8.5.0",
+		"@sindresorhus/tsconfig": "^8.1.0",
+		"tsup": "^8.5.1",
 		"typescript": "^5.9.3",
 		"vitest": "^3.2.4"
 	}

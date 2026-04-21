@@ -1,6 +1,9 @@
 import type Openfort from "@openfort/openfort-node";
-import { APIError, getSessionFromCtx } from "better-auth/api";
-import { createAuthEndpoint } from "better-auth/plugins";
+import {
+	APIError,
+	createAuthEndpoint,
+	getSessionFromCtx,
+} from "better-auth/api";
 import type { EncryptionSessionConfig } from "../types";
 
 export interface EncryptionSessionOptions {

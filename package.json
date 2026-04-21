@@ -15,11 +15,11 @@
 		"changeset:publish": "pnpm build && changeset publish"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@changesets/changelog-github": "^0.5.1",
-		"@changesets/cli": "^2.29.7",
-		"prettier": "^3.6.2",
-		"turbo": "^2.5.8",
+		"@biomejs/biome": "2.4.12",
+		"@changesets/changelog-github": "^0.6.0",
+		"@changesets/cli": "^2.31.0",
+		"prettier": "^3.8.3",
+		"turbo": "^2.9.6",
 		"typescript": "5.9.3"
 	},
 	"pnpm": {
