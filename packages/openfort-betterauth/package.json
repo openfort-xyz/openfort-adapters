@@ -43,18 +43,19 @@
 		"authentication"
 	],
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.4.12",
 		"@openfort/adapter-utils": "workspace:*",
 		"@openfort/openfort-node": "^0.10.3",
-		"@sindresorhus/tsconfig": "^7.0.0",
-		"@types/node": "^20.0.0",
-		"better-auth": "^1.4.9",
-		"tsup": "^8.5.0",
+		"@opentelemetry/api": "1.9.0",
+		"@sindresorhus/tsconfig": "^8.1.0",
+		"@types/node": "^22.0.0",
+		"better-auth": "^1.6.5",
+		"tsup": "^8.5.1",
 		"vitest": "^3.2.4"
 	},
 	"peerDependencies": {
 		"@openfort/openfort-node": "^0.10.3",
-		"better-auth": "^1.4.9",
+		"better-auth": "^1.6.5",
 		"zod": "^3.24.2 || ^4"
 	},
 	"dependencies": {}

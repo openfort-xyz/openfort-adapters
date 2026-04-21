@@ -3,7 +3,7 @@
 	"editor.formatOnPaste": false,
 	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
-		"quickfix.biome": "explicit"
+		"source.fixAll.biome": "explicit"
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"deno.enable": true,

@@ -1,7 +1,7 @@
 "use client";
 
-import { signUp } from "@/lib/auth-client";
 import { useState } from "react";
+import { signUp } from "@/lib/auth-client";
 
 export const Register = () => {
 	const [name, setName] = useState("");
