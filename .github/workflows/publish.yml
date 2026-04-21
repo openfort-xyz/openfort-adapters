@@ -3,47 +3,58 @@ name: Release
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions: {}
+
 jobs:
+  verify:
+    name: Verify
+    uses: ./.github/workflows/verify.yml
+    permissions:
+      contents: read
+
   release:
     name: Create version pull request and github release
+    needs: verify
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     permissions:
-      contents: write       # To push commits and tags
-      pull-requests: write  # To create and update PRs
-      id-token: write       # For OIDC and provenance
-      # packages: write       # To publish package to GHCR
+      contents: write
+      pull-requests: write
+      id-token: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5.0.0
+        with:
+          fetch-depth: 0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: 24
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Publish
-        uses: changesets/action@v1
+        uses: changesets/action@06245a4e0a36c064a573d4150030f5ec548e4fcc # v1.4.9
         with:
           publish: pnpm changeset:publish
           version: pnpm changeset:version
-          commit: "chore: version package" # Default is `Version Packages`
-          title: "chore: version package"  # Default is `Version Packages`
+          commit: "chore: version package"
+          title: "chore: version package"
         env:
-          NPM_CONFIG_PROVENANCE: true # this works only with npmjs and public repos, not ghcr
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    # we need this for PRs
-          NPM_TOKEN: '' # bug in changesets/action - https://github.com/changesets/changesets/issues/1152#issuecomment-3190884868
+          NPM_CONFIG_PROVENANCE: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: "" # changesets/action bug - https://github.com/changesets/changesets/issues/1152#issuecomment-3190884868
