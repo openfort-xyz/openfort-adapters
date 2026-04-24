@@ -43,7 +43,7 @@
 		"authentication"
 	],
 	"devDependencies": {
-		"@biomejs/biome": "2.4.12",
+		"@biomejs/biome": "2.4.13",
 		"@openfort/adapter-utils": "workspace:*",
 		"@openfort/openfort-node": "^0.10.3",
 		"@opentelemetry/api": "1.9.0",
