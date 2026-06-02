@@ -19,21 +19,22 @@
 		"@changesets/changelog-github": "^0.6.0",
 		"@changesets/cli": "^2.31.0",
 		"prettier": "^3.8.3",
-		"turbo": "^2.9.6",
+		"turbo": "^2.9.16",
 		"typescript": "5.9.3"
 	},
 	"pnpm": {
 		"overrides": {
-			"axios@<1.15.0": ">=1.15.0",
+			"axios@<1.16.0": ">=1.16.0",
 			"picomatch@<2.3.2": ">=2.3.2",
 			"picomatch@>=4.0.0 <4.0.4": ">=4.0.4",
 			"defu@<=6.1.4": ">=6.1.5",
 			"flatted@<3.4.2": ">=3.4.2",
-			"kysely@>=0.26.0 <=0.28.13": ">=0.28.14",
-			"brace-expansion@>=4.0.0 <5.0.5": ">=5.0.5",
+			"kysely@>=0.26.0 <0.28.17": ">=0.28.17",
+			"brace-expansion@>=4.0.0 <5.0.6": ">=5.0.6",
 			"minimatch@<10.2.3": ">=10.2.3",
 			"vite@<=6.4.1": ">=6.4.2",
-			"follow-redirects@<=1.15.11": ">=1.16.0"
+			"follow-redirects@<=1.15.11": ">=1.16.0",
+			"postcss@<8.5.10": ">=8.5.10"
 		}
 	},
 	"publishConfig": {
