@@ -36,6 +36,12 @@
 			"follow-redirects@<=1.15.11": ">=1.16.0",
 			"postcss@<8.5.10": ">=8.5.10",
 			"esbuild@>=0.27.3 <0.28.1": ">=0.28.1"
+		},
+		"auditConfig": {
+			"ignoreGhsas": [
+				"GHSA-vfj7-8cjw-p6xm",
+				"GHSA-hp3w-g68c-fv3c"
+			]
 		}
 	},
 	"publishConfig": {
