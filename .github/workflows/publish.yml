@@ -30,15 +30,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5.0.0
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        uses: pnpm/action-setup@v4.1.0
 
       - name: Set up Node.js
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        uses: actions/setup-node@v6.0.0
         with:
           node-version: 24
           cache: pnpm
@@ -48,7 +48,7 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Publish
-        uses: changesets/action@06245a4e0a36c064a573d4150030f5ec548e4fcc # v1.4.9
+        uses: changesets/action@v1.4.10
         with:
           publish: pnpm changeset:publish
           version: pnpm changeset:version
