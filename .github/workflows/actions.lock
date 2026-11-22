@@ -7,13 +7,13 @@ workflows:
         - 'actions/checkout@v4.2.2'
         - 'actions/setup-node@v6.0.0'
         - 'changesets/action@v1.4.10'
-        - 'pnpm/action-setup@v4.1.0'
+        - 'pnpm/action-setup@v6.1.1'
     '.github/workflows/verify-lockfile.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/verify.yml':
         - 'actions/checkout@v4.2.2'
         - 'actions/setup-node@v6.0.0'
-        - 'pnpm/action-setup@v4.1.0'
+        - 'pnpm/action-setup@v6.1.1'
 dependencies:
     'actions/checkout@v4.2.2':
         ref: 'v4.2.2'
@@ -35,8 +35,8 @@ dependencies:
         commit: 'sha1-06245a4e0a36c064a573d4150030f5ec548e4fcc'
         owner_id: 51163350
         repo_id: 202093906
-    'pnpm/action-setup@v4.1.0':
-        ref: 'v4.1.0'
-        commit: 'sha1-a7487c7e89a18df4991f7f222e4898a00d66ddda'
+    'pnpm/action-setup@v6.1.1':
+        ref: 'v6.1.1'
+        commit: 'sha1-73e46992e05b19abd31f2f3c20e0e7370d762115'
         owner_id: 21320719
         repo_id: 262289747
