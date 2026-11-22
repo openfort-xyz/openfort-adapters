@@ -6,7 +6,7 @@ workflows:
     '.github/workflows/publish.yml':
         - 'actions/checkout@v4.2.2'
         - 'actions/setup-node@v6.0.0'
-        - 'changesets/action@v1.4.10'
+        - 'changesets/action@v2.1.2'
         - 'pnpm/action-setup@v4.1.0'
     '.github/workflows/verify-lockfile.yml':
         - 'actions/checkout@v7.0.1'
@@ -30,9 +30,9 @@ dependencies:
         commit: 'sha1-2028fbc5c25fe9cf00d9f06a71cc4710d4507903'
         owner_id: 44036562
         repo_id: 189476904
-    'changesets/action@v1.4.10':
-        ref: 'v1.4.10'
-        commit: 'sha1-06245a4e0a36c064a573d4150030f5ec548e4fcc'
+    'changesets/action@v2.1.2':
+        ref: 'v2.1.2'
+        commit: 'sha1-ae32849d5ba541f9ae29e40e22a623bc13562f51'
         owner_id: 51163350
         repo_id: 202093906
     'pnpm/action-setup@v4.1.0':

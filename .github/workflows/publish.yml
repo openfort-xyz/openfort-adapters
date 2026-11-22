@@ -48,7 +48,7 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Publish
-        uses: changesets/action@v1.4.10
+        uses: changesets/action@v2.1.2
         with:
           publish: pnpm changeset:publish
           version: pnpm changeset:version
