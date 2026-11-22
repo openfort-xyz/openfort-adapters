@@ -11,9 +11,9 @@
 	"dependencies": {
 		"@openfort/better-auth": "workspace:*",
 		"@openfort/openfort-node": "^0.8.2",
-		"better-auth": "1.6.33",
+		"better-auth": "1.7.7",
 		"better-sqlite3": "^11.8.1",
-		"next": "15.5.28",
+		"next": "15.5.29",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
 	},
